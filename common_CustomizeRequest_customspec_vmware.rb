@@ -67,21 +67,14 @@ end
 
 ## Setting up Networking config overriding custom spec in VMware
 
-vlan_name = prov.get_option(:dialog_vlan_name)
-if not vlan_name.nil?
-  $evm.log("info", "Setting VLAN Name to: #{vlan_name}")
-  prov.set_option(:vlan,vlan_name)
-else
-    $evm.log("warn", "VLAN Name unknown or not suministrated")
-end
-
-addr_mode = prov.get_option(:dialog_addr_mode)
-if not addr_mode.nil?
-  $evm.log("info", "Setting IP Address Mode to: #{addr_mode}")
-  prov.set_option(:addr_mode,addr_mode)
-else
-    $evm.log("warn", "IP Address Mode unknown or not suministrated")
-end
+#### This is not needed if in override section static conf has been selected
+#addr_mode = prov.get_option(:dialog_addr_mode)
+#if not addr_mode.nil?
+#  $evm.log("info", "Setting IP Address Mode to: #{addr_mode}")
+#  prov.set_option(:addr_mode,addr_mode)
+#else
+#    $evm.log("warn", "IP Address Mode unknown or not suministrated")
+#end
 
 ip_addr = prov.get_option(:dialog_ip_addr)
 if not ip_addr.nil?
